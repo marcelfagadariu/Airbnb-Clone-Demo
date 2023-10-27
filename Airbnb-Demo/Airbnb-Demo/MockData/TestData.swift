@@ -22,11 +22,25 @@ struct MockTestData {
         FeatureData(icon: "fork.knife", title: "Superhost", description: "Superhosts are experienced, highly rated hosts who are commited to provide great stars guests"),
         FeatureData(icon: "gift.circle", title: "Special gift", description: "We prepared for our delighted guests some gifts"),
     ]
+
+    static let mockOfferData = [
+        OfferData(icon: "wifi", description: "Wifi"),
+        OfferData(icon: "alarm.waves.left.and.right.fill", description: "Alarm system"),
+        OfferData(icon: "fan.ceiling", description: "Balcony"),
+        OfferData(icon: "house.fill", description: "Laundry"),
+        OfferData(icon: "tv", description: "TV"),
+    ]
 }
 
 struct FeatureData: Identifiable {
     let id = UUID()
     let icon: String
     let title: String
+    let description: String
+}
+
+struct OfferData: Identifiable {
+    let id = UUID()
+    let icon: String
     let description: String
 }

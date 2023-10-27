@@ -1,5 +1,5 @@
 //
-//  ListingFeaturView.swift
+//  ListingFeatureView.swift
 //  Airbnb-Demo
 //
 //  Created by Marcel on 27.10.2023.
@@ -7,7 +7,7 @@
 
 import SwiftUI
 
-struct ListingFeaturView: View {
+struct ListingFeatureView: View {
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             ForEach(MockTestData.mockFeatureData) { feature in
@@ -32,5 +32,5 @@ struct ListingFeaturView: View {
 }
 
 #Preview {
-    ListingFeaturView()
+    ListingFeatureView()
 }
