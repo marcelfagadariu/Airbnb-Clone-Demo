@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		1F5625552AEC2C8000E615CD /* LocationInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5625542AEC2C8000E615CD /* LocationInfoView.swift */; };
+		1F5625582AEC350200E615CD /* RoomInfoView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5625572AEC350200E615CD /* RoomInfoView.swift */; };
+		1F56255A2AEC439500E615CD /* RentalOfferProviderView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1F5625592AEC439500E615CD /* RentalOfferProviderView.swift */; };
+		1FB915752AEC46A4002D3AE1 /* MapView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB915742AEC46A4002D3AE1 /* MapView.swift */; };
+		1FB915772AEC490D002D3AE1 /* ReservationView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FB915762AEC490D002D3AE1 /* ReservationView.swift */; };
 		1FBD8A6D2AEAC4DB0068E50C /* Airbnb_DemoApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8A6C2AEAC4DB0068E50C /* Airbnb_DemoApp.swift */; };
 		1FBD8A6F2AEAC4DB0068E50C /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8A6E2AEAC4DB0068E50C /* ContentView.swift */; };
 		1FBD8A712AEAC4DD0068E50C /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 1FBD8A702AEAC4DD0068E50C /* Assets.xcassets */; };
@@ -22,7 +27,7 @@
 		1FBD8AB12AEBFE6B0068E50C /* ListingImageCarousellView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8AB02AEBFE6B0068E50C /* ListingImageCarousellView.swift */; };
 		1FBD8AB32AEC01870068E50C /* RatingView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8AB22AEC01870068E50C /* RatingView.swift */; };
 		1FBD8AB52AEC04910068E50C /* HostView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8AB42AEC04910068E50C /* HostView.swift */; };
-		1FBD8AB72AEC104E0068E50C /* ListingFeaturView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8AB62AEC104E0068E50C /* ListingFeaturView.swift */; };
+		1FBD8AB72AEC104E0068E50C /* ListingFeatureView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 1FBD8AB62AEC104E0068E50C /* ListingFeatureView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -43,6 +48,11 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		1F5625542AEC2C8000E615CD /* LocationInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LocationInfoView.swift; sourceTree = "<group>"; };
+		1F5625572AEC350200E615CD /* RoomInfoView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RoomInfoView.swift; sourceTree = "<group>"; };
+		1F5625592AEC439500E615CD /* RentalOfferProviderView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentalOfferProviderView.swift; sourceTree = "<group>"; };
+		1FB915742AEC46A4002D3AE1 /* MapView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MapView.swift; sourceTree = "<group>"; };
+		1FB915762AEC490D002D3AE1 /* ReservationView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ReservationView.swift; sourceTree = "<group>"; };
 		1FBD8A692AEAC4DB0068E50C /* Airbnb-Demo.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Airbnb-Demo.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		1FBD8A6C2AEAC4DB0068E50C /* Airbnb_DemoApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Airbnb_DemoApp.swift; sourceTree = "<group>"; };
 		1FBD8A6E2AEAC4DB0068E50C /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
@@ -61,7 +71,7 @@
 		1FBD8AB02AEBFE6B0068E50C /* ListingImageCarousellView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingImageCarousellView.swift; sourceTree = "<group>"; };
 		1FBD8AB22AEC01870068E50C /* RatingView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RatingView.swift; sourceTree = "<group>"; };
 		1FBD8AB42AEC04910068E50C /* HostView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HostView.swift; sourceTree = "<group>"; };
-		1FBD8AB62AEC104E0068E50C /* ListingFeaturView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingFeaturView.swift; sourceTree = "<group>"; };
+		1FBD8AB62AEC104E0068E50C /* ListingFeatureView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ListingFeatureView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -89,6 +99,20 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		1F5625562AEC34C900E615CD /* DetailViewComponents */ = {
+			isa = PBXGroup;
+			children = (
+				1FBD8AB42AEC04910068E50C /* HostView.swift */,
+				1FBD8AB62AEC104E0068E50C /* ListingFeatureView.swift */,
+				1F5625542AEC2C8000E615CD /* LocationInfoView.swift */,
+				1FB915742AEC46A4002D3AE1 /* MapView.swift */,
+				1F5625592AEC439500E615CD /* RentalOfferProviderView.swift */,
+				1FB915762AEC490D002D3AE1 /* ReservationView.swift */,
+				1F5625572AEC350200E615CD /* RoomInfoView.swift */,
+			);
+			path = DetailViewComponents;
+			sourceTree = "<group>";
+		};
 		1FBD8A602AEAC4DB0068E50C = {
 			isa = PBXGroup;
 			children = (
@@ -258,10 +282,9 @@
 		1FBD8AAD2AEBFE490068E50C /* Components */ = {
 			isa = PBXGroup;
 			children = (
+				1F5625562AEC34C900E615CD /* DetailViewComponents */,
 				1FBD8AB02AEBFE6B0068E50C /* ListingImageCarousellView.swift */,
 				1FBD8AB22AEC01870068E50C /* RatingView.swift */,
-				1FBD8AB42AEC04910068E50C /* HostView.swift */,
-				1FBD8AB62AEC104E0068E50C /* ListingFeaturView.swift */,
 			);
 			path = Components;
 			sourceTree = "<group>";
@@ -403,9 +426,14 @@
 				1FBD8AA72AEBE1920068E50C /* SearchAndFilterBar.swift in Sources */,
 				1FBD8AB12AEBFE6B0068E50C /* ListingImageCarousellView.swift in Sources */,
 				1FBD8AB52AEC04910068E50C /* HostView.swift in Sources */,
+				1FB915752AEC46A4002D3AE1 /* MapView.swift in Sources */,
 				1FBD8AA92AEBFD7B0068E50C /* ListingDetailView.swift in Sources */,
+				1F56255A2AEC439500E615CD /* RentalOfferProviderView.swift in Sources */,
 				1FBD8AAC2AEBFDFE0068E50C /* TestData.swift in Sources */,
-				1FBD8AB72AEC104E0068E50C /* ListingFeaturView.swift in Sources */,
+				1F5625582AEC350200E615CD /* RoomInfoView.swift in Sources */,
+				1F5625552AEC2C8000E615CD /* LocationInfoView.swift in Sources */,
+				1FB915772AEC490D002D3AE1 /* ReservationView.swift in Sources */,
+				1FBD8AB72AEC104E0068E50C /* ListingFeatureView.swift in Sources */,
 				1FBD8A6D2AEAC4DB0068E50C /* Airbnb_DemoApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

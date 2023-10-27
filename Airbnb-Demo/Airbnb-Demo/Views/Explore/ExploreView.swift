@@ -25,7 +25,9 @@ struct ExploreView: View {
                 }
             }
             .navigationDestination(for: Int.self) { items in
-                Text("Detail view")
+                ListingDetailView()
+                    .navigationBarBackButtonHidden()
+                /// dismissed native back button so we have the custom one
             }
         }
     }

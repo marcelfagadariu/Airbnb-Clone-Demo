@@ -9,31 +9,33 @@ import SwiftUI
 
 struct ListingDetailView: View {
 
+    @Environment(\.dismiss) var dismiss
+
     var body: some View {
         ScrollView {
-            ListingImageCarousellView(height: 320, isClipped: false)
+            /// embeder in ZStack to add back button
+            ZStack(alignment: .topLeading) {
+                /// images overview
+                ListingImageCarousellView(height: 320, isClipped: false)
 
-            VStack(alignment: .leading, spacing: 8) {
-                Text("Miami Villa")
-                    .font(.title)
-                    .fontWeight(.semibold)
-
-                VStack(alignment: .leading) {
-                    HStack {
-                        RatingView(rating: 4.52)
-                        Text("-")
-                        Text("28 reviews")
-                            .underline()
-                            .fontWeight(.semibold)
-                    }
-                    .foregroundStyle(.black)
-
-                    Text("Miami Florida")
+                /// back button
+                Button {
+                    dismiss()
+                } label: {
+                    Image(systemName: "chevron.left")
+                        .foregroundStyle(.black)
+                        .background(
+                            Circle()
+                                .fill(.white)
+                                .frame(width: 32, height: 32)
+                        )
+                        .padding(.top, 35)
+                        .padding(32)
                 }
-                .font(.caption)
             }
-            .padding(.leading)
-            .frame(maxWidth: .infinity, alignment: .leading)
+
+            /// location info view
+            LocationInfoView()
 
             Divider()
 
@@ -43,7 +45,28 @@ struct ListingDetailView: View {
             Divider()
 
             /// listing feature view
-            ListingFeaturView()
+            ListingFeatureView()
+
+            Divider()
+
+            /// room info view
+            RoomInfoView()
+
+            Divider()
+
+            /// rental offer provider view
+            RentalOfferProviderView()
+
+            Divider()
+
+            /// map view
+            MapView()
+        }
+        .ignoresSafeArea()
+        .padding(.bottom, 65)
+        .overlay(alignment: .bottom) {
+            /// reserve view
+            ReservationView()
         }
     }
 }
