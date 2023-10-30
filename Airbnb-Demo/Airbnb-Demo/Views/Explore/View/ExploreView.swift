@@ -12,6 +12,7 @@ struct ExploreView: View {
     // MARK: - Properties
 
     @State private var showDestinationSearchView = false
+    var viewModel = ExploreViewModel(service: ExplorerService())
 
     // MARK: - Body
 
@@ -30,19 +31,22 @@ struct ExploreView: View {
 
                     /// Only `loads` what we can see on the screen
                     LazyVStack(spacing: 25) {
-                        ForEach(0..<10, id: \.self) { items in
-                            NavigationLink(value: items) {
-                                ListingItemView()
+                        ForEach(viewModel.listing) { item in
+                            NavigationLink(value: item) {
+                                ListingItemView(listing: item)
                                     .frame(height: 400)
                                     .clipShape(RoundedRectangle(cornerRadius: 10))
                             }
                         }
                     }
                 }
-                .navigationDestination(for: Int.self) { items in
-                    ListingDetailView()
+                .navigationDestination(for: Listing.self) { item in
+                    ListingDetailView(listing: item)
                         .navigationBarBackButtonHidden()
                     /// dismissed native back button so we have the custom one
+                }
+                .task {
+                    await viewModel.fetchListing()
                 }
             }
         }

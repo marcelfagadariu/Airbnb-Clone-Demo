@@ -11,21 +11,21 @@ struct HostView: View {
 
     // MARK: - Internal
 
-    let name: String
+    let listing: Listing
 
     // MARK: - Body
 
     var body: some View {
         HStack {
             VStack(alignment: .leading, spacing: 4) {
-                Text("Entire villa hosted by \(name)")
+                Text("Entire \(listing.type.description) hosted by \(listing.ownerName)")
                     .font(.headline)
 
                 HStack(spacing: 2) {
-                    Text("4 guests - ")
-                    Text("4 bedroms - ")
-                    Text("3 beds - ")
-                    Text("2 baths")
+                    Text("\(listing.numberOfGuests) guests - ")
+                    Text("\(listing.numberOfBedrooms) bedroms - ")
+                    Text("\(listing.numberOfBeds) beds - ")
+                    Text("\(listing.numberOfBaths) baths")
                 }
                 .font(.caption)
             }
@@ -33,7 +33,7 @@ struct HostView: View {
 
             Spacer()
 
-            Image("male-profile")
+            Image(listing.ownerImageURL)
                 .resizable()
                 .scaledToFill()
                 .frame(width: 65, height: 65)
@@ -44,5 +44,5 @@ struct HostView: View {
 }
 
 #Preview {
-    HostView(name: "Jhon Smith")
+    HostView(listing: DeveloperPreview().listing[0])
 }
