@@ -19,7 +19,7 @@ struct ExploreView: View {
     var body: some View {
         NavigationStack {
             if showDestinationSearchView {
-                DestinationSearchView(isDismissed: $showDestinationSearchView)
+                DestinationSearchView(viewModel: viewModel, isDismissed: $showDestinationSearchView)
             } else {
                 ScrollView {
                     SearchAndFilterBar()
