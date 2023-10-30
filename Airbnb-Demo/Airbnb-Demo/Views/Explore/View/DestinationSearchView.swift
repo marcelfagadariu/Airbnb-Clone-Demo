@@ -11,8 +11,8 @@ struct DestinationSearchView: View {
 
     // MARK: - Internal
 
+    var viewModel: ExploreViewModel
     @Binding var isDismissed: Bool
-    @State private var destination = ""
     @State private var selection: DestinationSearchOption = .location
     @State var startDate = Date()
     @State var endDate = Date()
@@ -35,9 +35,9 @@ struct DestinationSearchView: View {
 
                 Spacer()
 
-                if !destination.isEmpty {
+                if !viewModel.searchLocation.isEmpty {
                     Button("Clear") {
-                        destination = ""
+                        viewModel.searchLocation = ""
                     }
                     .foregroundStyle(.black)
                     .font(.subheadline)
@@ -46,7 +46,9 @@ struct DestinationSearchView: View {
             }
             .padding()
 
-            WhereToGoView(destination: $destination, selection: $selection)
+            WhereToGoView(selection: $selection,
+                          isDismissed: $isDismissed,
+                          viewModel: viewModel)
                 .onTapGesture {
                     withAnimation(.snappy) {
                         selection = .location
@@ -73,5 +75,5 @@ struct DestinationSearchView: View {
 }
 
 #Preview {
-    DestinationSearchView(isDismissed: .constant(true))
+    DestinationSearchView(viewModel: ExploreViewModel(service: ExplorerService()), isDismissed: .constant(true))
 }

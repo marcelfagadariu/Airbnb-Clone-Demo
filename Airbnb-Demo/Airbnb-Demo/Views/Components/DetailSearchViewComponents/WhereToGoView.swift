@@ -9,8 +9,9 @@ import SwiftUI
 
 struct WhereToGoView: View {
 
-    @Binding var destination: String
     @Binding var selection: DestinationSearchOption
+    @Binding var isDismissed: Bool
+    @Bindable var viewModel: ExploreViewModel
 
     var body: some View {
         VStack(alignment: .leading) {
@@ -21,8 +22,12 @@ struct WhereToGoView: View {
                 HStack {
                     Image(systemName: "magnifyingglass")
                         .imageScale(.small)
-                    TextField("Search destination", text: $destination)
+                    TextField("Search destination", text: $viewModel.searchLocation)
                         .font(.subheadline)
+                        .onSubmit {
+                            viewModel.updateListing()
+                            isDismissed.toggle()
+                        }
                 }
                 .frame(height: 44)
                 .padding(.horizontal)
@@ -42,7 +47,7 @@ struct WhereToGoView: View {
 
 #Preview {
     Group {
-        WhereToGoView(destination: .constant("text"), selection: .constant(.guests))
-        WhereToGoView(destination: .constant("text"), selection: .constant(.location))
+        WhereToGoView(selection: .constant(.guests), isDismissed: .constant(true), viewModel: ExploreViewModel(service: ExplorerService()))
+        WhereToGoView(selection: .constant(.location), isDismissed: .constant(true), viewModel: ExploreViewModel(service: ExplorerService()))
     }
 }
