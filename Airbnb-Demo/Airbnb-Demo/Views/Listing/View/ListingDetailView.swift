@@ -6,17 +6,20 @@
 //
 
 import SwiftUI
+import MapKit
 
 struct ListingDetailView: View {
 
     @Environment(\.dismiss) var dismiss
+    @State private var coordinate = CLLocationCoordinate2D(latitude: 37.7749, longitude: -122.4194)
+    let listing: Listing
 
     var body: some View {
         ScrollView {
             /// embeder in ZStack to add back button
             ZStack(alignment: .topLeading) {
                 /// images overview
-                ListingImageCarousellView(height: 320, isClipped: false)
+                ListingImageCarousellView(listing: listing, height: 320, isClipped: false)
 
                 /// back button
                 Button {
@@ -35,43 +38,43 @@ struct ListingDetailView: View {
             }
 
             /// location info view
-            LocationInfoView()
+            LocationInfoView(listing: listing)
 
             Divider()
 
             /// host info view
-            HostView(name: "Fagadariu Marcel")
+            HostView(listing: listing)
 
             Divider()
 
             /// listing feature view
-            ListingFeatureView()
+            ListingFeatureView(listing: listing)
 
             Divider()
 
             /// room info view
-            RoomInfoView()
+            RoomInfoView(listing: listing)
 
             Divider()
 
             /// rental offer provider view
-            RentalOfferProviderView()
+            RentalOfferProviderView(listing: listing)
 
             Divider()
 
             /// map view
-            MapView()
+            MapView(listing: listing)
         }
         .toolbar(.hidden, for: .tabBar)
         .ignoresSafeArea()
         .padding(.bottom, 65)
         .overlay(alignment: .bottom) {
             /// reserve view
-            ReservationView()
+            ReservationView(listing: listing)
         }
     }
 }
 
 #Preview {
-    ListingDetailView()
+    ListingDetailView(listing: DeveloperPreview().listing[0])
 }

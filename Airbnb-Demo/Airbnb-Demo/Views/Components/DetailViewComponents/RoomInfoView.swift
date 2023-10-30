@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct RoomInfoView: View {
+    
+    let listing: Listing
+
     var body: some View {
         VStack(alignment: .leading) {
             Text("Where you'll sleep")
@@ -15,7 +18,7 @@ struct RoomInfoView: View {
 
             ScrollView(.horizontal, showsIndicators: false) {
                 HStack(spacing: 16) {
-                    ForEach(1..<5) { item in
+                    ForEach(1...listing.numberOfBedrooms, id: \.self) { item in
                         VStack {
                             Image(systemName: "bed.double")
                             Text("Bedroom \(item)")
@@ -36,5 +39,5 @@ struct RoomInfoView: View {
 }
 
 #Preview {
-    RoomInfoView()
+    RoomInfoView(listing: DeveloperPreview().listing[0])
 }

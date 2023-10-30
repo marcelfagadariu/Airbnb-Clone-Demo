@@ -8,16 +8,19 @@
 import SwiftUI
 
 struct RentalOfferProviderView: View {
+
+    let listing: Listing
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
             Text("What this place offer")
                 .font(.headline)
 
-            ForEach(MockTestData.mockOfferData) { item in
+            ForEach(listing.aminities) { item in
                 HStack {
-                    Image(systemName: item.icon)
+                    Image(systemName: item.imageName)
                         .frame(width: 32)
-                    Text(item.description)
+                    Text(item.title)
                         .font(.footnote)
                     Spacer()
                 }
@@ -28,5 +31,5 @@ struct RentalOfferProviderView: View {
 }
 
 #Preview {
-    RentalOfferProviderView()
+    RentalOfferProviderView(listing: DeveloperPreview().listing[0])
 }

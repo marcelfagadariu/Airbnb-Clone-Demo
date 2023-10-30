@@ -11,19 +11,19 @@ struct LocationInfoView: View {
 
     // MARK: - Internal
 
-
+    let listing: Listing
 
     // MAK: - Body
 
     var body: some View {
         VStack(alignment: .leading, spacing: 8) {
-            Text("Miami Villa")
+            Text(listing.title)
                 .font(.title)
                 .fontWeight(.semibold)
 
             VStack(alignment: .leading) {
                 HStack {
-                    RatingView(rating: 4.52)
+                    RatingView(rating: listing.rating)
                     Text("-")
                     Text("28 reviews")
                         .underline()
@@ -31,7 +31,7 @@ struct LocationInfoView: View {
                 }
                 .foregroundStyle(.black)
 
-                Text("Miami Florida")
+                Text("\(listing.city), \(listing.state)")
             }
             .font(.caption)
         }
@@ -41,5 +41,5 @@ struct LocationInfoView: View {
 }
 
 #Preview {
-    LocationInfoView()
+    LocationInfoView(listing: DeveloperPreview().listing[0])
 }

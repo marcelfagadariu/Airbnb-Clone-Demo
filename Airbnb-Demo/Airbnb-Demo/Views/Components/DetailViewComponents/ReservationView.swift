@@ -8,6 +8,9 @@
 import SwiftUI
 
 struct ReservationView: View {
+
+    let listing: Listing
+
     var body: some View {
         VStack {
             Divider()
@@ -15,7 +18,7 @@ struct ReservationView: View {
 
             HStack {
                 VStack(alignment: .leading) {
-                    Text("$500")
+                    Text("$ \(listing.pricePerNight)")
                         .font(.subheadline)
                         .fontWeight(.semibold)
                     Text("Total before taxes")
@@ -47,5 +50,5 @@ struct ReservationView: View {
 }
 
 #Preview {
-    ReservationView()
+    ReservationView(listing: DeveloperPreview().listing[0])
 }

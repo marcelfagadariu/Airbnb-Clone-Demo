@@ -8,17 +8,20 @@
 import SwiftUI
 
 struct ListingFeatureView: View {
+
+    let listing: Listing
+
     var body: some View {
         VStack(alignment: .leading, spacing: 16) {
-            ForEach(MockTestData.mockFeatureData) { feature in
+            ForEach(listing.features) { feature in
                 HStack(spacing: 12) {
-                    Image(systemName: feature.icon)
+                    Image(systemName: feature.imageName)
 
                     VStack(alignment: .leading) {
                         Text(feature.title)
                             .font(.footnote)
                             .fontWeight(.semibold)
-                        Text(feature.description)
+                        Text(feature.subtitle)
                             .font(.caption)
                             .foregroundStyle(.gray)
                     }
@@ -32,5 +35,5 @@ struct ListingFeatureView: View {
 }
 
 #Preview {
-    ListingFeatureView()
+    ListingFeatureView(listing: DeveloperPreview().listing[0])
 }
